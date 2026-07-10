@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LyLy Shop — Đồ Bộ Mặc Nhà Cao Cấp | Thời Trang Trẻ Trung</title>
+  <meta name="description" content="LyLy Shop – Thương hiệu đồ bộ mặc nhà cao cấp với chất liệu mềm mại, thiết kế tối giản hiện đại. Mua sắm bộ đồ nhà thời trang, chất lượng Việt Nam." />
+  <meta property="og:title" content="LyLy Shop — Đồ Bộ Mặc Nhà Cao Cấp" />
+  <meta property="og:description" content="Thương hiệu đồ bộ mặc nhà thời trang, minimalism, chất liệu cao cấp." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo" id="logo-link">LyLy<span>Shop</span></a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#collections" class="nav__link">Bộ Sưu Tập</a>
+        <a href="#about" class="nav__link">Về Chúng Tôi</a>
+        <a href="#news" class="nav__link">Tin Tức</a>
+        <a href="#videos" class="nav__link">Video</a>
+        <a href="#contact" class="nav__link">Liên Hệ</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#collections" class="btn btn--outline" id="nav-shop-btn">Mua Ngay</a>
+        <button class="nav__burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile" id="mobile-menu">
+      <a href="#collections" class="nav__mobile-link">Bộ Sưu Tập</a>
+      <a href="#about" class="nav__mobile-link">Về Chúng Tôi</a>
+      <a href="#news" class="nav__mobile-link">Tin Tức</a>
+      <a href="#videos" class="nav__mobile-link">Video</a>
+      <a href="#contact" class="nav__mobile-link">Liên Hệ</a>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="assets/hero.png" alt="Cô gái mặc đồ bộ nhà LyLy Shop" class="hero__img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__badge" id="hero-badge">✦ Bộ Sưu Tập 2025</div>
+      <h1 class="hero__title" id="hero-title">
+        Thoải Mái<br /><em>Là Phong Cách</em>
+      </h1>
+      <p class="hero__sub" id="hero-sub">
+        Đồ bộ mặc nhà cao cấp — thiết kế tối giản, chất liệu mềm mại,<br class="br-desktop" />
+        hoàn hảo cho mọi khoảnh khắc thư giãn tại nhà.
+      </p>
+      <div class="hero__ctas" id="hero-ctas">
+        <a href="#collections" class="btn btn--primary" id="hero-cta-main">Khám Phá Ngay</a>
+        <a href="#about" class="btn btn--ghost" id="hero-cta-ghost">Về Chúng Tôi</a>
+      </div>
+      <div class="hero__stats" id="hero-stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num">5K+</span>
+          <span class="hero__stat-label">Khách Hàng</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">50+</span>
+          <span class="hero__stat-label">Mẫu Thiết Kế</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">98%</span>
+          <span class="hero__stat-label">Hài Lòng</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Mềm Mại ✦</span><span>Thoải Mái ✦</span><span>Phong Cách ✦</span>
+      <span>Chất Lượng Cao ✦</span><span>Giao Hàng Toàn Quốc ✦</span><span>Made in Vietnam ✦</span>
+      <span>Mềm Mại ✦</span><span>Thoải Mái ✦</span><span>Phong Cách ✦</span>
+      <span>Chất Lượng Cao ✦</span><span>Giao Hàng Toàn Quốc ✦</span><span>Made in Vietnam ✦</span>
+      <span>Mềm Mại ✦</span><span>Thoải Mái ✦</span><span>Phong Cách ✦</span>
+      <span>Chất Lượng Cao ✦</span><span>Giao Hàng Toàn Quốc ✦</span><span>Made in Vietnam ✦</span>
+      <span>Mềm Mại ✦</span><span>Thoải Mái ✦</span><span>Phong Cách ✦</span>
+      <span>Chất Lượng Cao ✦</span><span>Giao Hàng Toàn Quốc ✦</span><span>Made in Vietnam ✦</span>
+    </div>
+  </div>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label reveal">Tại Sao Chọn LyLy Shop</div>
+      <h2 class="section-title reveal">Sự Khác Biệt <em>Của Chúng Tôi</em></h2>
+      <div class="features__grid">
+        <div class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Chất Liệu Cao Cấp</h3>
+          <p class="feature-card__desc">100% cotton mềm mại, thoáng mát, thân thiện với làn da. An toàn cho cả bé yêu.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="feature-card__title">Giao Hàng Nhanh</h3>
+          <p class="feature-card__desc">Đặt hôm nay, nhận ngay ngày mai. Giao hàng toàn quốc, đóng gói cẩn thận.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Thiết Kế Tối Giản</h3>
+          <p class="feature-card__desc">Màu sắc thanh lịch, đường cắt may tinh tế — mặc nhà mà vẫn đẹp khi ra ngoài.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Bảo Hành Chất Lượng</h3>
+          <p class="feature-card__desc">Đổi trả trong 30 ngày nếu không hài lòng. Cam kết chất lượng từng sản phẩm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="collections" id="collections">
+    <div class="container">
+      <div class="section-label reveal">Bộ Sưu Tập</div>
+      <h2 class="section-title reveal">Chọn Màu <em>Yêu Thích</em></h2>
+      <div class="products__grid">
+        <div class="product-card reveal" id="product-1">
+          <div class="product-card__img-wrap">
+            <img src="assets/hero.png" alt="Đồ bộ màu hồng phấn" class="product-card__img" loading="lazy" />
+            <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-1">Đặt Ngay</a></div>
+            <div class="product-card__badge">Bestseller</div>
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Bộ Hồng Phấn</h3>
+            <p class="product-card__material">Cotton Ribbed · Áo + Quần</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">285.000₫</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#FBBDD5" title="Hồng phấn"></span>
+                <span class="color-dot" style="background:#F7E3EB" title="Hồng nhạt"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card reveal" id="product-2">
+          <div class="product-card__img-wrap">
+            <img src="assets/lifestyle.png" alt="Đồ bộ màu xanh sage" class="product-card__img" loading="lazy" />
+            <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-2">Đặt Ngay</a></div>
+            <div class="product-card__badge product-card__badge--new">Mới</div>
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Bộ Xanh Sage</h3>
+            <p class="product-card__material">Cotton Waffle · Áo + Quần</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">295.000₫</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#8BAF8D" title="Sage xanh"></span>
+                <span class="color-dot" style="background:#C5DEC6" title="Sage nhạt"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card reveal" id="product-3">
+          <div class="product-card__img-wrap">
+            <img src="assets/products.png" alt="Bộ sưu tập đa dạng màu sắc" class="product-card__img" loading="lazy" />
+            <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-3">Đặt Ngay</a></div>
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Bộ Tím Lavender</h3>
+            <p class="product-card__material">Modal Blend · Áo + Quần</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">310.000₫</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#C4A6D8" title="Tím lavender"></span>
+                <span class="color-dot" style="background:#EDD9F5" title="Tím nhạt"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card reveal" id="product-4">
+          <div class="product-card__img-wrap">
+            <img src="assets/products.png" alt="Đồ bộ màu kem" class="product-card__img product-card__img--alt" loading="lazy" />
+            <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-4">Đặt Ngay</a></div>
+          </div>
+          <div class="product-card__info">
+            <h3 class="product-card__name">Bộ Kem Beige</h3>
+            <p class="product-card__material">Cotton Linen · Áo + Quần</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">275.000₫</span>
+              <div class="product-card__colors">
+                <span class="color-dot" style="background:#E8D5B7" title="Kem beige"></span>
+                <span class="color-dot" style="background:#F5EDD8" title="Kem nhạt"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__img-col reveal">
+        <img src="assets/lifestyle.png" alt="Phong cách sống LyLy Shop" class="about__img" />
+        <div class="about__img-accent"></div>
+      </div>
+      <div class="about__text-col">
+        <div class="section-label reveal">Câu Chuyện Của Chúng Tôi</div>
+        <h2 class="section-title reveal">Thoải Mái Là<br /><em>Quyền Lợi</em> Của Bạn</h2>
+        <p class="about__body reveal">LyLy Shop ra đời từ niềm tin rằng: <strong>mặc đẹp không chỉ khi ra đường</strong>. Những khoảnh khắc thư giãn tại nhà cũng xứng đáng được tôn trọng bằng những bộ đồ mềm mại, tinh tế và đầy phong cách.</p>
+        <p class="about__body reveal">Mỗi sản phẩm được may tỉ mỉ từ chất liệu cotton tự nhiên cao cấp, kiểm tra chất lượng nghiêm ngặt trước khi đến tay bạn.</p>
+        <div class="about__tags reveal">
+          <span class="tag">100% Cotton</span>
+          <span class="tag">Made in Vietnam</span>
+          <span class="tag">Eco-Friendly</span>
+          <span class="tag">Handcrafted</span>
+        </div>
+        <a href="#collections" class="btn btn--primary reveal" id="about-shop-btn">Xem Bộ Sưu Tập</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label reveal">Khách Hàng Nói Gì</div>
+      <h2 class="section-title reveal">Đánh Giá <em>Thực Tế</em></h2>
+      <div class="testimonials__grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">"Chất vải mềm hơn tôi tưởng! Mặc ngủ cực kỳ thoải mái, màu hồng dễ thương lắm. Sẽ mua thêm cho mẹ."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">TL</div>
+            <div><div class="testimonial-card__name">Trâm Lê</div><div class="testimonial-card__city">TP. Hồ Chí Minh</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">"Đặt hàng chiều, sáng hôm sau đã nhận được. Đóng gói đẹp, bộ mặc nhà như hình, rất hài lòng!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">MN</div>
+            <div><div class="testimonial-card__name">Minh Nguyệt</div><div class="testimonial-card__city">Hà Nội</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">"Chồng mình hay chê mặc nhà xấu, từ khi mua bộ này ổng khen liên tục. Chất lượng xứng đáng tiền."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">BT</div>
+            <div><div class="testimonial-card__name">Bảo Trân</div><div class="testimonial-card__city">Đà Nẵng</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS SECTION -->
+  <section class="news" id="news">
+    <div class="container">
+      <div class="section-label reveal">Tin Tức &amp; Bài Viết</div>
+      <h2 class="section-title reveal">Cập Nhật <em>Mới Nhất</em></h2>
+      <p class="section-desc reveal">Theo dõi fanpage để không bỏ lỡ các bài viết mới nhất về xu hướng thời trang và tips mặc nhà.</p>
+      <div class="news__grid" id="news-grid">
+        <!-- Will be populated by JS -->
+      </div>
+      <div class="section-cta reveal">
+        <a href="https://www.facebook.com/dobolylyshop" target="_blank" rel="noopener" class="btn btn--outline" id="news-fb-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Xem Tất Cả Bài Viết
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS SECTION -->
+  <section class="videos" id="videos">
+    <div class="container">
+      <div class="section-label reveal">Video</div>
+      <h2 class="section-title reveal">Khám Phá <em>Qua Video</em></h2>
+      <p class="section-desc reveal">Xem các video về sản phẩm, tips mặc nhà và hậu trường sản xuất từ fanpage chính thức.</p>
+      <div class="videos__grid" id="videos-grid">
+        <!-- Will be populated by JS -->
+      </div>
+      <div class="section-cta reveal">
+        <a href="https://www.facebook.com/dobolylyshop/videos" target="_blank" rel="noopener" class="btn btn--outline" id="videos-fb-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Xem Tất Cả Video
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" id="cta-banner">
+    <div class="container cta-banner__inner">
+      <div class="cta-banner__text">
+        <div class="section-label reveal" style="color:rgba(255,255,255,0.7)">Ưu Đãi Đặc Biệt</div>
+        <h2 class="cta-banner__title reveal">Giảm 15% Đơn <em>Đầu Tiên</em></h2>
+        <p class="cta-banner__sub reveal">Nhập mã <strong>LYLY15</strong> khi đặt hàng. Áp dụng cho tất cả sản phẩm.</p>
+      </div>
+      <div class="cta-banner__actions reveal">
+        <a href="#contact" class="btn btn--white" id="cta-banner-btn">Đặt Hàng Ngay</a>
+        <a href="https://zalo.me/0775678839" class="btn btn--white-outline" id="cta-zalo-btn" target="_blank" rel="noopener">Chat Zalo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <div class="section-label reveal">Liên Hệ</div>
+        <h2 class="section-title reveal">Đặt Hàng &amp;<br /><em>Tư Vấn Miễn Phí</em></h2>
+        <div class="contact__channels">
+          <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="channel-btn channel-btn--zalo" id="contact-zalo">
+            <svg width="22" height="22" viewBox="0 0 50 50"><rect width="50" height="50" rx="12" fill="#0068FF"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="22" font-weight="700" font-family="Arial">Z</text></svg>
+            Chat Zalo
+          </a>
+          <a href="https://m.me/dobolylyshop" target="_blank" rel="noopener" class="channel-btn channel-btn--mess" id="contact-mess">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.961 1.478 5.607 3.793 7.33V22l3.467-1.906c.924.256 1.905.393 2.94.393 5.523 0 10-4.145 10-9.244S17.523 2 12 2zm1.09 12.44l-2.54-2.71-4.96 2.71 5.45-5.79 2.61 2.71 4.89-2.71-5.45 5.79z"/></svg>
+            Messenger
+          </a>
+          <a href="https://www.facebook.com/dobolylyshop" target="_blank" rel="noopener" class="channel-btn channel-btn--fb" id="contact-fb">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+        </div>
+        <div class="contact__info-list">
+          <div class="contact__info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>077 5678 839</span>
+          </div>
+          <div class="contact__info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>hello@lylyshop.vn</span>
+          </div>
+          <div class="contact__info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>TP. Hồ Chí Minh, Việt Nam</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact__form" id="contact-form" novalidate>
+        <h3 class="contact__form-title">Gửi Yêu Cầu Đặt Hàng</h3>
+        <div class="form-group">
+          <label for="fname" class="form-label">Họ tên *</label>
+          <input type="text" id="fname" name="name" class="form-input" placeholder="Nguyễn Thị A" required />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Số điện thoại *</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="077 5678 839" required />
+        </div>
+        <div class="form-group">
+          <label for="product-select" class="form-label">Sản phẩm quan tâm</label>
+          <select id="product-select" name="product" class="form-input">
+            <option value="">-- Chọn sản phẩm --</option>
+            <option value="hong">Bộ Hồng Phấn - 285.000đ</option>
+            <option value="sage">Bộ Xanh Sage - 295.000đ</option>
+            <option value="lavender">Bộ Tím Lavender - 310.000đ</option>
+            <option value="beige">Bộ Kem Beige - 275.000đ</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Ghi chú thêm</label>
+          <textarea id="message" name="message" class="form-input form-textarea" rows="3" placeholder="Size, màu sắc, địa chỉ giao hàng..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="form-submit">Gửi Đặt Hàng</button>
+        <p class="form-note">Phản hồi trong vòng 15 phút qua Zalo hoặc Facebook</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">LyLy<span>Shop</span></div>
+        <p class="footer__tagline">Thoải mái là phong cách sống.</p>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/dobolylyshop" target="_blank" rel="noopener" class="footer__social" id="footer-fb" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="footer__social" id="footer-zalo" aria-label="Zalo">
+            <svg width="18" height="18" viewBox="0 0 50 50"><text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="currentColor" font-size="28" font-weight="700" font-family="Arial">Z</text></svg>
+          </a>
+          <a href="https://www.tiktok.com/@dobolylyshop" target="_blank" rel="noopener" class="footer__social" id="footer-tt" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.42a8.16 8.16 0 0 0 4.77 1.52V7.5a4.85 4.85 0 0 1-1.01-.81z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__links-col">
+        <h4 class="footer__heading">Sản Phẩm</h4>
+        <ul class="footer__list">
+          <li><a href="#collections" class="footer__link">Bộ Cotton</a></li>
+          <li><a href="#collections" class="footer__link">Bộ Modal</a></li>
+          <li><a href="#collections" class="footer__link">Bộ Flannel</a></li>
+          <li><a href="#collections" class="footer__link">Bộ Linen</a></li>
+        </ul>
+      </div>
+      <div class="footer__links-col">
+        <h4 class="footer__heading">Hỗ Trợ</h4>
+        <ul class="footer__list">
+          <li><a href="#contact" class="footer__link">Đặt Hàng</a></li>
+          <li><a href="#contact" class="footer__link">Chính Sách Đổi Trả</a></li>
+          <li><a href="#contact" class="footer__link">Hướng Dẫn Size</a></li>
+          <li><a href="#contact" class="footer__link">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer__links-col">
+        <h4 class="footer__heading">Theo Dõi</h4>
+        <ul class="footer__list">
+          <li><a href="https://www.facebook.com/dobolylyshop" target="_blank" rel="noopener" class="footer__link">Facebook</a></li>
+          <li><a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="footer__link">Zalo OA</a></li>
+          <li><a href="https://www.tiktok.com/@dobolylyshop" target="_blank" rel="noopener" class="footer__link">TikTok</a></li>
+          <li><a href="#news" class="footer__link">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>2025 LyLy Shop. All rights reserved. | Thuong hieu Viet Nam.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CHAT WIDGETS -->
+  <div class="chat-widgets" id="chat-widgets">
+    <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="chat-widget chat-widget--zalo" id="chat-zalo" title="Chat Zalo" aria-label="Lien he qua Zalo">
+      <div class="chat-widget__pulse"></div>
+      <svg width="28" height="28" viewBox="0 0 50 50" fill="none"><text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="30" font-weight="800" font-family="Arial, sans-serif">Z</text></svg>
+      <span class="chat-widget__tooltip">Chat Zalo</span>
+    </a>
+    <a href="https://m.me/dobolylyshop" target="_blank" rel="noopener" class="chat-widget chat-widget--mess" id="chat-mess" title="Chat Messenger" aria-label="Lien he qua Messenger">
+      <div class="chat-widget__pulse chat-widget__pulse--mess"></div>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.961 1.478 5.607 3.793 7.33V22l3.467-1.906c.924.256 1.905.393 2.94.393 5.523 0 10-4.145 10-9.244S17.523 2 12 2zm1.09 12.44l-2.54-2.71-4.96 2.71 5.45-5.79 2.61 2.71 4.89-2.71-5.45 5.79z"/></svg>
+      <span class="chat-widget__tooltip">Messenger</span>
+    </a>
+    <a href="https://www.facebook.com/dobolylyshop" target="_blank" rel="noopener" class="chat-widget chat-widget--fb" id="chat-fb" title="Facebook Page" aria-label="Xem Facebook Page">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      <span class="chat-widget__tooltip">Facebook</span>
+    </a>
+    <button class="chat-toggle" id="chat-toggle" aria-label="Mo/dong kenh lien he" aria-expanded="false">
+      <svg class="chat-toggle__icon chat-toggle__icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <svg class="chat-toggle__icon chat-toggle__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Ve dau trang">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
