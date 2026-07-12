@@ -206,6 +206,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .nav.scrolled {
   background: rgba(253,242,248,0.97);
@@ -935,18 +938,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
-  transition: var(--transition);
-  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: scale(0) translateZ(0);
   opacity: 0;
   pointer-events: none;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .chat-widget.visible {
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
   opacity: 1;
   pointer-events: all;
 }
-.chat-widget:hover { transform: scale(1.12) !important; }
+.chat-widget:hover { transform: scale(1.12) translateZ(0) !important; }
 .chat-widget--zalo { background: var(--color-zalo); }
 .chat-widget--mess { background: linear-gradient(135deg, #0084ff, #0099ff); }
 .chat-widget--fb   { background: var(--color-fb); }

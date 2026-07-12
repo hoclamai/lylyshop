@@ -26,9 +26,9 @@ const FB_CONFIG = {
 // Fallback data shown when Facebook API is not configured or fails
 const FALLBACK_NEWS = [
   {
-    title: 'Đồ Bộ Mặc Nhà 2025: Minimalism Lên Ngôi',
+    title: 'Đồ Bộ Mặc Nhà 2026: Minimalism Lên Ngôi',
     excerpt: 'Phong cách tối giản đang dẫn đầu xu hướng thời trang nhà năm nay với các gam màu trung tính và chất liệu tự nhiên...',
-    date: '10 Tháng 7, 2025',
+    date: '10 Tháng 7, 2026',
     category: 'Xu Hướng',
     img: 'hero.png',
     url: 'https://www.facebook.com/dobolylyshop',
@@ -36,15 +36,15 @@ const FALLBACK_NEWS = [
   {
     title: '5 Tips Chọn Đồ Bộ Mặc Nhà Hoàn Hảo',
     excerpt: 'Không phải ai cũng biết cách chọn đồ nhà vừa đẹp vừa thoải mái. Hãy cùng LyLy Shop khám phá bí quyết...',
-    date: '5 Tháng 7, 2025',
+    date: '5 Tháng 7, 2026',
     category: 'Bí Quyết',
     img: 'lifestyle.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
   {
-    title: 'Ra Mắt BST Thu Đông 2025 — Ấm Áp & Thanh Lịch',
+    title: 'Ra Mắt BST Thu Đông 2026 — Ấm Áp & Thanh Lịch',
     excerpt: 'Bộ sưu tập mới với chất liệu flannel cao cấp, giữ ấm tốt trong những ngày se lạnh mà vẫn đẹp...',
-    date: '1 Tháng 7, 2025',
+    date: '1 Tháng 7, 2026',
     category: 'Bộ Sưu Tập',
     img: 'products.png',
     url: 'https://www.facebook.com/dobolylyshop',
@@ -54,14 +54,14 @@ const FALLBACK_NEWS = [
 const FALLBACK_VIDEOS = [
   {
     title: 'Review Bộ Hồng Phấn — Mặc Cực Thoải Mái!',
-    date: '8 Tháng 7, 2025',
+    date: '8 Tháng 7, 2026',
     duration: '1:24',
     thumbnail: 'lifestyle.png',
     url: 'https://www.facebook.com/reel/1718402149208918',
   },
   {
     title: 'Hậu Trường Sản Xuất — Từ Vải Đến Sản Phẩm',
-    date: '3 Tháng 7, 2025',
+    date: '3 Tháng 7, 2026',
     duration: '2:10',
     thumbnail: 'hero.png',
     url: 'https://www.facebook.com/reel/812309551163547',
