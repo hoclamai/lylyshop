@@ -30,7 +30,7 @@ const FALLBACK_NEWS = [
     excerpt: 'Phong cách tối giản đang dẫn đầu xu hướng thời trang nhà năm nay với các gam màu trung tính và chất liệu tự nhiên...',
     date: '10 Tháng 7, 2025',
     category: 'Xu Hướng',
-    img: 'assets/hero.png',
+    img: 'hero.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
   {
@@ -38,7 +38,7 @@ const FALLBACK_NEWS = [
     excerpt: 'Không phải ai cũng biết cách chọn đồ nhà vừa đẹp vừa thoải mái. Hãy cùng LyLy Shop khám phá bí quyết...',
     date: '5 Tháng 7, 2025',
     category: 'Bí Quyết',
-    img: 'assets/lifestyle.png',
+    img: 'lifestyle.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
   {
@@ -46,7 +46,7 @@ const FALLBACK_NEWS = [
     excerpt: 'Bộ sưu tập mới với chất liệu flannel cao cấp, giữ ấm tốt trong những ngày se lạnh mà vẫn đẹp...',
     date: '1 Tháng 7, 2025',
     category: 'Bộ Sưu Tập',
-    img: 'assets/products.png',
+    img: 'products.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
 ];
@@ -56,21 +56,21 @@ const FALLBACK_VIDEOS = [
     title: 'Review Bộ Hồng Phấn — Mặc Cực Thoải Mái!',
     date: '8 Tháng 7, 2025',
     duration: '1:24',
-    thumbnail: 'assets/lifestyle.png',
+    thumbnail: 'lifestyle.png',
     url: 'https://www.facebook.com/reel/1718402149208918',
   },
   {
     title: 'Hậu Trường Sản Xuất — Từ Vải Đến Sản Phẩm',
     date: '3 Tháng 7, 2025',
     duration: '2:10',
-    thumbnail: 'assets/hero.png',
+    thumbnail: 'hero.png',
     url: 'https://www.facebook.com/reel/812309551163547',
   },
   {
     title: 'Unboxing BST Mới — Màu Sắc Đẹp Quá!',
     date: '28 Tháng 6, 2025',
     duration: '0:58',
-    thumbnail: 'assets/products.png',
+    thumbnail: 'products.png',
     url: 'https://www.facebook.com/reel/817267891081505',
   },
 ];
@@ -258,7 +258,7 @@ function renderNewsCards(posts) {
     const excerpt = text.length > 120 ? text.slice(0, 120) + '...' : text;
     const date = post.created_time ? formatFBDate(post.created_time) : '';
     const url = post.permalink_url || `https://www.facebook.com/${FB_CONFIG.pageId}`;
-    const imgSrc = post.full_picture || `assets/${['hero', 'lifestyle', 'products'][i % 3]}.png`;
+    const imgSrc = post.full_picture || `${['hero', 'lifestyle', 'products'][i % 3]}.png`;
     const cats = ['Tin Tức', 'Bài Viết', 'Cập Nhật'];
     const cat = cats[i % cats.length];
 
@@ -267,7 +267,7 @@ function renderNewsCards(posts) {
     card.id = `news-api-${i + 1}`;
     card.innerHTML = `
       <div class="news-card__img-wrap">
-        <img src="${imgSrc}" alt="${cat}" class="news-card__img" loading="lazy" onerror="this.src='assets/hero.png'" />
+        <img src="${imgSrc}" alt="${cat}" class="news-card__img" loading="lazy" onerror="this.src='hero.png'" />
         <span class="news-card__cat">${cat}</span>
       </div>
       <div class="news-card__body">
@@ -318,7 +318,7 @@ function renderVideoCards(videos) {
     const duration = vid.length ? formatDuration(vid.length) : '';
     const thumb = (vid.thumbnails && vid.thumbnails.data && vid.thumbnails.data[0])
       ? vid.thumbnails.data[0].uri
-      : `assets/${['lifestyle', 'hero', 'products'][i % 3]}.png`;
+      : `${['lifestyle', 'hero', 'products'][i % 3]}.png`;
 
     const card = document.createElement('div');
     card.className = 'video-card reveal';
@@ -326,7 +326,7 @@ function renderVideoCards(videos) {
     card.innerHTML = `
       <a href="${url}" target="_blank" rel="noopener" class="video-card__link" id="video-api-link-${i + 1}">
         <div class="video-card__thumb">
-          <img src="${thumb}" alt="${title}" class="video-card__img" loading="lazy" onerror="this.src='assets/lifestyle.png'" />
+          <img src="${thumb}" alt="${title}" class="video-card__img" loading="lazy" onerror="this.src='lifestyle.png'" />
           <div class="video-card__play">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
