@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LyLy Shop — Đồ Bộ Mặc Nhà Cao Cấp | Thời Trang Trẻ Trung</title>
-  <meta name="description" content="LyLy Shop – Thương hiệu đồ bộ mặc nhà cao cấp với chất liệu mềm mại, thiết kế tối giản hiện đại. Mua sắm bộ đồ nhà thời trang, chất lượng Việt Nam." />
-  <meta property="og:title" content="LyLy Shop — Đồ Bộ Mặc Nhà Cao Cấp" />
-  <meta property="og:description" content="Thương hiệu đồ bộ mặc nhà thời trang, minimalism, chất liệu cao cấp." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="LyLy Shop – Shop đồ bộ mặc nhà cao cấp với chất liệu mềm mại, thiết kế hiện đại. Mua sắm đồ bộ mặc nhà thời trang, chất lượng Việt Nam.">
+  <meta property="og:title" content="LyLy Shop — Đồ Bộ Mặc Nhà Cao Cấp">
+  <meta property="og:description" content="Shop đồ bộ mặc nhà thời trang, hiện đại, chất liệu cao cấp.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://lylyshop.vn/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "LyLy Shop",
+    "image": "https://lylyshop.vn/assets/hero.png",
+    "description": "LyLy Shop – Shop đồ bộ mặc nhà cao cấp với chất liệu mềm mại, thiết kế hiện đại. Mua sắm đồ bộ mặc nhà thời trang, chất lượng Việt Nam.",
+    "telephone": "+84775678839",
+    "url": "https://lylyshop.vn",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "TP. Hồ Chí Minh",
+      "addressCountry": "VN"
+    },
+    "priceRange": "275000-310000 VND"
+  }
+  </script>
 </head>
 <body>
+
+  <a href="#hero" class="skip-to-content">Bỏ qua đến nội dung chính</a>
 
   <header class="nav" id="nav">
     <div class="nav__inner container">
@@ -29,7 +50,7 @@
       </nav>
       <div class="nav__actions">
         <a href="#collections" class="btn btn--outline" id="nav-shop-btn">Mua Ngay</a>
-        <button class="nav__burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <button type="button" class="nav__burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -45,16 +66,16 @@
 
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="page.jpg" alt="Cô gái mặc đồ bộ nhà LyLy Shop" class="hero__img" />
+      <img src="assets/page.jpg" width="1280" height="1280" alt="Cô gái mặc đồ bộ nhà LyLy Shop" class="hero__img">
       <div class="hero__overlay"></div>
     </div>
     <div class="container hero__content">
-      <div class="hero__badge" id="hero-badge">✦ Bộ Sưu Tập 2025</div>
+      <div class="hero__badge" id="hero-badge">✦ Bộ Sưu Tập 2026</div>
       <h1 class="hero__title" id="hero-title">
-        Thoải Mái<br /><em>Là Phong Cách</em>
+        Thoải Mái<br><em>Là Phong Cách</em>
       </h1>
       <p class="hero__sub" id="hero-sub">
-        Đồ bộ mặc nhà cao cấp — thiết kế tối giản, chất liệu mềm mại,<br class="br-desktop" />
+        Đồ bộ mặc nhà cao cấp — thiết kế hiện đại, chất liệu mềm mại,<br class="br-desktop">
         hoàn hảo cho mọi khoảnh khắc thư giãn tại nhà.
       </p>
       <div class="hero__ctas" id="hero-ctas">
@@ -113,7 +134,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <h3 class="feature-card__title">Giao Hàng Nhanh</h3>
-          <p class="feature-card__desc">Đặt hôm nay, nhận ngay ngày mai. Giao hàng toàn quốc, đóng gói cẩn thận.</p>
+          <p class="feature-card__desc">Đặt hôm nay, nhận hàng trong 2 ngày. Giao hàng toàn quốc, đóng gói cẩn thận.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-card__icon">
@@ -140,7 +161,7 @@
       <div class="products__grid">
         <div class="product-card reveal" id="product-1">
           <div class="product-card__img-wrap">
-            <img src="hero.png" alt="Đồ bộ màu hồng phấn" class="product-card__img" loading="lazy" />
+            <img src="assets/hero.png" width="300" height="400" alt="Đồ bộ màu hồng phấn" class="product-card__img" loading="lazy">
             <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-1">Đặt Ngay</a></div>
             <div class="product-card__badge">Bestseller</div>
           </div>
@@ -150,15 +171,15 @@
             <div class="product-card__footer">
               <span class="product-card__price">285.000₫</span>
               <div class="product-card__colors">
-                <span class="color-dot" style="background:#FBBDD5" title="Hồng phấn"></span>
-                <span class="color-dot" style="background:#F7E3EB" title="Hồng nhạt"></span>
+                <button type="button" class="color-dot" style="background:#FBBDD5" aria-label="Màu hồng phấn" title="Hồng phấn"></button>
+                <button type="button" class="color-dot" style="background:#F7E3EB" aria-label="Màu hồng nhạt" title="Hồng nhạt"></button>
               </div>
             </div>
           </div>
         </div>
         <div class="product-card reveal" id="product-2">
           <div class="product-card__img-wrap">
-            <img src="lifestyle.png" alt="Đồ bộ màu xanh sage" class="product-card__img" loading="lazy" />
+            <img src="assets/lifestyle.png" width="300" height="400" alt="Đồ bộ màu xanh sage" class="product-card__img" loading="lazy">
             <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-2">Đặt Ngay</a></div>
             <div class="product-card__badge product-card__badge--new">Mới</div>
           </div>
@@ -168,15 +189,15 @@
             <div class="product-card__footer">
               <span class="product-card__price">295.000₫</span>
               <div class="product-card__colors">
-                <span class="color-dot" style="background:#8BAF8D" title="Sage xanh"></span>
-                <span class="color-dot" style="background:#C5DEC6" title="Sage nhạt"></span>
+                <button type="button" class="color-dot" style="background:#8BAF8D" aria-label="Màu sage xanh" title="Sage xanh"></button>
+                <button type="button" class="color-dot" style="background:#C5DEC6" aria-label="Màu sage nhạt" title="Sage nhạt"></button>
               </div>
             </div>
           </div>
         </div>
         <div class="product-card reveal" id="product-3">
           <div class="product-card__img-wrap">
-            <img src="products.png" alt="Bộ sưu tập đa dạng màu sắc" class="product-card__img" loading="lazy" />
+            <img src="assets/products.png" width="300" height="400" alt="Bộ sưu tập đa dạng màu sắc" class="product-card__img" loading="lazy">
             <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-3">Đặt Ngay</a></div>
           </div>
           <div class="product-card__info">
@@ -185,15 +206,15 @@
             <div class="product-card__footer">
               <span class="product-card__price">310.000₫</span>
               <div class="product-card__colors">
-                <span class="color-dot" style="background:#C4A6D8" title="Tím lavender"></span>
-                <span class="color-dot" style="background:#EDD9F5" title="Tím nhạt"></span>
+                <button type="button" class="color-dot" style="background:#C4A6D8" aria-label="Màu tím lavender" title="Tím lavender"></button>
+                <button type="button" class="color-dot" style="background:#EDD9F5" aria-label="Màu tím nhạt" title="Tím nhạt"></button>
               </div>
             </div>
           </div>
         </div>
         <div class="product-card reveal" id="product-4">
           <div class="product-card__img-wrap">
-            <img src="products.png" alt="Đồ bộ màu kem" class="product-card__img product-card__img--alt" loading="lazy" />
+            <img src="assets/hero.png" width="300" height="400" alt="Đồ bộ màu kem" class="product-card__img product-card__img--alt" loading="lazy">
             <div class="product-card__overlay"><a href="#contact" class="btn btn--primary" id="buy-4">Đặt Ngay</a></div>
           </div>
           <div class="product-card__info">
@@ -202,8 +223,8 @@
             <div class="product-card__footer">
               <span class="product-card__price">275.000₫</span>
               <div class="product-card__colors">
-                <span class="color-dot" style="background:#E8D5B7" title="Kem beige"></span>
-                <span class="color-dot" style="background:#F5EDD8" title="Kem nhạt"></span>
+                <button type="button" class="color-dot" style="background:#E8D5B7" aria-label="Màu kem beige" title="Kem beige"></button>
+                <button type="button" class="color-dot" style="background:#F5EDD8" aria-label="Màu kem nhạt" title="Kem nhạt"></button>
               </div>
             </div>
           </div>
@@ -215,12 +236,12 @@
   <section class="about" id="about">
     <div class="container about__inner">
       <div class="about__img-col reveal">
-        <img src="lifestyle.png" alt="Phong cách sống LyLy Shop" class="about__img" />
+        <img src="assets/lifestyle.png" width="480" height="600" alt="Phong cách sống LyLy Shop" class="about__img">
         <div class="about__img-accent"></div>
       </div>
       <div class="about__text-col">
         <div class="section-label reveal">Câu Chuyện Của Chúng Tôi</div>
-        <h2 class="section-title reveal">Thoải Mái Là<br /><em>Quyền Lợi</em> Của Bạn</h2>
+        <h2 class="section-title reveal">Thoải Mái Là<br><em>Quyền Lợi</em> Của Bạn</h2>
         <p class="about__body reveal">LyLy Shop ra đời từ niềm tin rằng: <strong>mặc đẹp không chỉ khi ra đường</strong>. Những khoảnh khắc thư giãn tại nhà cũng xứng đáng được tôn trọng bằng những bộ đồ mềm mại, tinh tế và đầy phong cách.</p>
         <p class="about__body reveal">Mỗi sản phẩm được may tỉ mỉ từ chất liệu cotton tự nhiên cao cấp, kiểm tra chất lượng nghiêm ngặt trước khi đến tay bạn.</p>
         <div class="about__tags reveal">
@@ -307,9 +328,9 @@
   <section class="cta-banner" id="cta-banner">
     <div class="container cta-banner__inner">
       <div class="cta-banner__text">
-        <div class="section-label reveal" style="color:rgba(255,255,255,0.7)">Ưu Đãi Đặc Biệt</div>
+        <div class="section-label section-label--white reveal">Ưu Đãi Đặc Biệt</div>
         <h2 class="cta-banner__title reveal">Giảm 15% Đơn <em>Đầu Tiên</em></h2>
-        <p class="cta-banner__sub reveal">Nhập mã <strong>LYLY25</strong> khi đặt hàng. Áp dụng cho tất cả sản phẩm.</p>
+        <p class="cta-banner__sub reveal">Nhập mã <strong>LYLY15</strong> khi đặt hàng. Áp dụng cho tất cả sản phẩm.</p>
       </div>
       <div class="cta-banner__actions reveal">
         <a href="#contact" class="btn btn--white" id="cta-banner-btn">Đặt Hàng Ngay</a>
@@ -323,7 +344,7 @@
     <div class="container contact__inner">
       <div class="contact__info">
         <div class="section-label reveal">Liên Hệ</div>
-        <h2 class="section-title reveal">Đặt Hàng &amp;<br /><em>Tư Vấn Miễn Phí</em></h2>
+        <h2 class="section-title reveal">Đặt Hàng &amp;<br><em>Tư Vấn Miễn Phí</em></h2>
         <div class="contact__channels">
           <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="channel-btn channel-btn--zalo" id="contact-zalo">
             <svg width="22" height="22" viewBox="0 0 50 50"><rect width="50" height="50" rx="12" fill="#0068FF"/><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="22" font-weight="700" font-family="Arial">Z</text></svg>
@@ -357,11 +378,13 @@
         <h3 class="contact__form-title">Gửi Yêu Cầu Đặt Hàng</h3>
         <div class="form-group">
           <label for="fname" class="form-label">Họ tên *</label>
-          <input type="text" id="fname" name="name" class="form-input" placeholder="Nguyễn Thị A" required />
+          <input type="text" id="fname" name="name" class="form-input" placeholder="Nguyễn Thị A" required>
+          <span class="form-error" id="name-error">Họ tên không được để trống.</span>
         </div>
         <div class="form-group">
           <label for="phone" class="form-label">Số điện thoại *</label>
-          <input type="tel" id="phone" name="phone" class="form-input" placeholder="077 5678 839" required />
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="077 5678 839" required>
+          <span class="form-error" id="phone-error">Số điện thoại không hợp lệ (ít nhất 10 số).</span>
         </div>
         <div class="form-group">
           <label for="product-select" class="form-label">Sản phẩm quan tâm</label>
@@ -378,6 +401,7 @@
           <textarea id="message" name="message" class="form-input form-textarea" rows="3" placeholder="Size, màu sắc, địa chỉ giao hàng..."></textarea>
         </div>
         <button type="submit" class="btn btn--primary btn--full" id="form-submit">Gửi Đặt Hàng</button>
+        <div class="form-success" id="form-success-banner"></div>
         <p class="form-note">Phản hồi trong vòng 15 phút qua Zalo hoặc Facebook</p>
       </form>
     </div>
@@ -415,7 +439,7 @@
         <ul class="footer__list">
           <li><a href="#contact" class="footer__link">Đặt Hàng</a></li>
           <li><a href="#contact" class="footer__link">Chính Sách Đổi Trả</a></li>
-          <li><a href="#contact" class="footer__link">Hướng Dẫn Size</a></li>
+          <li><a href="#" class="footer__link" id="size-guide-trigger">Hướng Dẫn Size</a></li>
           <li><a href="#contact" class="footer__link">FAQ</a></li>
         </ul>
       </div>
@@ -431,19 +455,19 @@
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <p>2025 LyLy Shop. All rights reserved. | Thuong hieu Viet Nam.</p>
+        <p>&copy; <span id="footer-year">2026</span> LyLy Shop. All rights reserved. | Thương hiệu Việt Nam.</p>
       </div>
     </div>
   </footer>
 
   <!-- FLOATING CHAT WIDGETS -->
   <div class="chat-widgets" id="chat-widgets">
-    <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="chat-widget chat-widget--zalo" id="chat-zalo" title="Chat Zalo" aria-label="Lien he qua Zalo">
+    <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="chat-widget chat-widget--zalo" id="chat-zalo" title="Chat Zalo" aria-label="Liên hệ qua Zalo">
       <div class="chat-widget__pulse"></div>
       <svg width="28" height="28" viewBox="0 0 50 50" fill="none"><text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="30" font-weight="800" font-family="Arial, sans-serif">Z</text></svg>
       <span class="chat-widget__tooltip">Chat Zalo</span>
     </a>
-    <a href="https://m.me/dobolylyshop" target="_blank" rel="noopener" class="chat-widget chat-widget--mess" id="chat-mess" title="Chat Messenger" aria-label="Lien he qua Messenger">
+    <a href="https://m.me/dobolylyshop" target="_blank" rel="noopener" class="chat-widget chat-widget--mess" id="chat-mess" title="Chat Messenger" aria-label="Liên hệ qua Messenger">
       <div class="chat-widget__pulse chat-widget__pulse--mess"></div>
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.961 1.478 5.607 3.793 7.33V22l3.467-1.906c.924.256 1.905.393 2.94.393 5.523 0 10-4.145 10-9.244S17.523 2 12 2zm1.09 12.44l-2.54-2.71-4.96 2.71 5.45-5.79 2.61 2.71 4.89-2.71-5.45 5.79z"/></svg>
       <span class="chat-widget__tooltip">Messenger</span>
@@ -452,13 +476,70 @@
       <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       <span class="chat-widget__tooltip">Facebook</span>
     </a>
-    <button class="chat-toggle" id="chat-toggle" aria-label="Mo/dong kenh lien he" aria-expanded="false">
+    <button type="button" class="chat-toggle" id="chat-toggle" aria-label="Mở/đóng kênh liên hệ" aria-expanded="false">
       <svg class="chat-toggle__icon chat-toggle__icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       <svg class="chat-toggle__icon chat-toggle__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
 
-  <button class="back-to-top" id="back-to-top" aria-label="Ve dau trang">
+  <!-- SIZE GUIDE MODAL -->
+  <div class="modal-overlay" id="size-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal__header">
+        <h3 class="modal__title" id="modal-title">Bảng Chọn Size LyLy Shop</h3>
+        <button type="button" class="modal__close" id="close-modal-btn" aria-label="Đóng bảng size">×</button>
+      </div>
+      <div class="modal__body">
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Cân Nặng (kg)</th>
+              <th>Chiều Cao (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>S</strong></td>
+              <td>40 - 47 kg</td>
+              <td>145 - 153 cm</td>
+            </tr>
+            <tr>
+              <td><strong>M</strong></td>
+              <td>48 - 54 kg</td>
+              <td>154 - 160 cm</td>
+            </tr>
+            <tr>
+              <td><strong>L</strong></td>
+              <td>55 - 60 kg</td>
+              <td>161 - 165 cm</td>
+            </tr>
+            <tr>
+              <td><strong>XL</strong></td>
+              <td>61 - 68 kg</td>
+              <td>166 - 172 cm</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="size-note">
+          * <strong>Lưu ý:</strong> Bảng size mang tính chất tham khảo. Nếu chiều cao và cân nặng của bạn lệch size (ví dụ: nặng cân hơn nhưng chiều cao thấp), vui lòng chọn <strong>tăng lên 1 size</strong> để mặc nhà được thoải mái nhất, hoặc ghi chú trong form để LyLy Shop tư vấn trực tiếp!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="mobile-sticky-cta">
+    <div class="mobile-sticky-cta__inner">
+      <a href="https://zalo.me/0775678839" target="_blank" rel="noopener" class="btn btn--zalo-mobile" id="sticky-zalo-btn">
+        <svg width="18" height="18" viewBox="0 0 50 50" fill="currentColor"><text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="currentColor" font-size="28" font-weight="800" font-family="Arial, sans-serif">Z</text></svg>
+        Chat Zalo
+      </a>
+      <a href="#contact" class="btn btn--primary" id="sticky-buy-btn">Đặt Hàng</a>
+    </div>
+  </div>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Về đầu trang">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
