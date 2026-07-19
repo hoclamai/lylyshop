@@ -30,7 +30,7 @@ const FALLBACK_NEWS = [
     excerpt: 'Phong cách tối giản đang dẫn đầu xu hướng thời trang nhà năm nay với các gam màu trung tính và chất liệu tự nhiên...',
     date: '10 Tháng 7, 2026',
     category: 'Xu Hướng',
-    img: 'hero.png',
+    img: 'assets/hero.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
   {
@@ -38,7 +38,7 @@ const FALLBACK_NEWS = [
     excerpt: 'Không phải ai cũng biết cách chọn đồ nhà vừa đẹp vừa thoải mái. Hãy cùng LyLy Shop khám phá bí quyết...',
     date: '5 Tháng 7, 2026',
     category: 'Bí Quyết',
-    img: 'lifestyle.png',
+    img: 'assets/lifestyle.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
   {
@@ -46,7 +46,7 @@ const FALLBACK_NEWS = [
     excerpt: 'Bộ sưu tập mới với chất liệu flannel cao cấp, giữ ấm tốt trong những ngày se lạnh mà vẫn đẹp...',
     date: '1 Tháng 7, 2026',
     category: 'Bộ Sưu Tập',
-    img: 'products.png',
+    img: 'assets/products.png',
     url: 'https://www.facebook.com/dobolylyshop',
   },
 ];
@@ -56,21 +56,21 @@ const FALLBACK_VIDEOS = [
     title: 'Review Bộ Hồng Phấn — Mặc Cực Thoải Mái!',
     date: '8 Tháng 7, 2026',
     duration: '1:24',
-    thumbnail: 'lifestyle.png',
+    thumbnail: 'assets/lifestyle.png',
     url: 'https://www.facebook.com/reel/1718402149208918',
   },
   {
     title: 'Hậu Trường Sản Xuất — Từ Vải Đến Sản Phẩm',
     date: '3 Tháng 7, 2026',
     duration: '2:10',
-    thumbnail: 'hero.png',
+    thumbnail: 'assets/hero.png',
     url: 'https://www.facebook.com/reel/812309551163547',
   },
   {
     title: 'Unboxing BST Mới — Màu Sắc Đẹp Quá!',
     date: '28 Tháng 6, 2025',
     duration: '0:58',
-    thumbnail: 'products.png',
+    thumbnail: 'assets/products.png',
     url: 'https://www.facebook.com/reel/817267891081505',
   },
 ];
@@ -81,23 +81,26 @@ if (typeof gsap !== 'undefined') {
 }
 
 // ─── INTERSECTION OBSERVER REVEAL ───────────────────
+let revealObserver;
 function initReveal() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          // Stagger delay based on sibling index
-          const siblings = Array.from(entry.target.parentNode.children);
-          const idx = siblings.indexOf(entry.target);
-          const delay = (idx % 4) * 90;
-          setTimeout(() => entry.target.classList.add('is-visible'), delay);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Stagger delay based on sibling index
+            const siblings = Array.from(entry.target.parentNode.children);
+            const idx = siblings.indexOf(entry.target);
+            const delay = (idx % 4) * 90;
+            setTimeout(() => entry.target.classList.add('is-visible'), delay);
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+  }
+  document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => revealObserver.observe(el));
 }
 
 // ─── NAV SCROLL ──────────────────────────────────────
@@ -164,36 +167,115 @@ function initChatWidgets() {
   });
 }
 
+// ─── SIZE GUIDE MODAL ──────────────────────────────
+function initSizeGuideModal() {
+  const trigger = document.getElementById('size-guide-trigger');
+  const modal = document.getElementById('size-modal');
+  const closeBtn = document.getElementById('close-modal-btn');
+  if (!trigger || !modal || !closeBtn) return;
+
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
 // ─── FORM SUBMIT ──────────────────────────────────────
 function initForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  // Pre-fill selection when clicking "Đặt Ngay" in product cards
+  document.querySelectorAll('[id^="buy-"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const num = btn.id.split('-')[1];
+      const select = document.getElementById('product-select');
+      if (select) {
+        const values = { '1': 'hong', '2': 'sage', '3': 'lavender', '4': 'beige' };
+        select.value = values[num] || '';
+      }
+    });
+  });
+
+  const nameInput = document.getElementById('fname');
+  const phoneInput = document.getElementById('phone');
+  const nameError = document.getElementById('name-error');
+  const phoneError = document.getElementById('phone-error');
+  const successBanner = document.getElementById('form-success-banner');
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('fname').value.trim();
-    const phone = document.getElementById('phone').value.trim();
+    
+    // Reset errors
+    nameInput.classList.remove('is-error');
+    phoneInput.classList.remove('is-error');
+    nameError.classList.remove('visible');
+    phoneError.classList.remove('visible');
+    successBanner.classList.remove('visible');
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
     const product = document.getElementById('product-select').value;
     const message = document.getElementById('message').value.trim();
 
-    if (!name || !phone) {
-      alert('Vui lòng điền đầy đủ họ tên và số điện thoại.');
-      return;
+    let hasError = false;
+
+    if (!name) {
+      nameInput.classList.add('is-error');
+      nameError.classList.add('visible');
+      hasError = true;
     }
 
+    const phoneRegex = /^[0-9]{10,12}$/;
+    const cleanPhone = phone.replace(/[\s.-]/g, '');
+    if (!phone || !phoneRegex.test(cleanPhone)) {
+      phoneInput.classList.add('is-error');
+      phoneError.classList.add('visible');
+      hasError = true;
+    }
+
+    if (hasError) return;
+
     // Build Zalo / Messenger message pre-fill
-    const orderText = `Xin chào LyLy Shop!\nTên: ${name}\nSĐT: ${phone}${product ? '\nSản phẩm: ' + product : ''}${message ? '\nGhi chú: ' + message : ''}`;
+    const selectEl = document.getElementById('product-select');
+    const selectedText = selectEl.options[selectEl.selectedIndex].text;
+    const productText = product ? selectedText : 'Chưa chọn sản phẩm';
+    
+    const orderText = `Xin chào LyLy Shop!\nTôi muốn đặt hàng:\n- Họ tên: ${name}\n- SĐT: ${phone}\n- Sản phẩm: ${productText}${message ? '\n- Ghi chú: ' + message : ''}`;
     const encoded = encodeURIComponent(orderText);
 
     // Open Zalo with pre-filled text
     window.open(`https://zalo.me/0775678839?text=${encoded}`, '_blank');
 
-    // Visual feedback
+    // Visual feedback success banner
+    successBanner.textContent = 'Đặt hàng thành công! Đang chuyển hướng sang Zalo...';
+    successBanner.classList.add('visible');
+    
     const btn = document.getElementById('form-submit');
     const orig = btn.textContent;
-    btn.textContent = 'Đã gửi! Đang chuyển sang Zalo...';
+    btn.textContent = 'Đã gửi yêu cầu!';
     btn.disabled = true;
-    setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 3000);
+    
+    setTimeout(() => { 
+      btn.textContent = orig; 
+      btn.disabled = false; 
+      form.reset();
+      successBanner.classList.remove('visible');
+    }, 4000);
   });
 }
 
@@ -248,6 +330,18 @@ function formatDuration(seconds) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
+// ─── UTILS: XSS SANITIZATION ─────────────────────────
+function sanitizeHTML(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
+
 function renderNewsCards(posts) {
   const grid = document.getElementById('news-grid');
   if (!grid) return;
@@ -257,23 +351,34 @@ function renderNewsCards(posts) {
     const text = post.message || post.story || 'Xem bài viết mới từ LyLy Shop';
     const excerpt = text.length > 120 ? text.slice(0, 120) + '...' : text;
     const date = post.created_time ? formatFBDate(post.created_time) : '';
-    const url = post.permalink_url || `https://www.facebook.com/${FB_CONFIG.pageId}`;
-    const imgSrc = post.full_picture || `${['hero', 'lifestyle', 'products'][i % 3]}.png`;
+    
+    // Validate URLs and Images
+    const rawUrl = post.permalink_url || `https://www.facebook.com/${FB_CONFIG.pageId}`;
+    const url = rawUrl.startsWith('http') ? rawUrl : '#';
+    
+    const rawImgSrc = post.full_picture || `assets/${['hero', 'lifestyle', 'products'][i % 3]}.png`;
+    const imgSrc = rawImgSrc.startsWith('http') || rawImgSrc.startsWith('assets/') ? rawImgSrc : `assets/hero.png`;
+    
     const cats = ['Tin Tức', 'Bài Viết', 'Cập Nhật'];
     const cat = cats[i % cats.length];
+
+    const cleanTitle = sanitizeHTML(excerpt.split('\n')[0].slice(0, 80) || cat);
+    const cleanExcerpt = sanitizeHTML(excerpt);
+    const cleanCat = sanitizeHTML(cat);
+    const cleanDate = sanitizeHTML(date);
 
     const card = document.createElement('article');
     card.className = 'news-card reveal';
     card.id = `news-api-${i + 1}`;
     card.innerHTML = `
       <div class="news-card__img-wrap">
-        <img src="${imgSrc}" alt="${cat}" class="news-card__img" loading="lazy" onerror="this.src='hero.png'" />
-        <span class="news-card__cat">${cat}</span>
+        <img src="${imgSrc}" alt="${cleanCat}" class="news-card__img" loading="lazy" onerror="this.src='assets/hero.png'" />
+        <span class="news-card__cat">${cleanCat}</span>
       </div>
       <div class="news-card__body">
-        <time class="news-card__date">${date}</time>
-        <h3 class="news-card__title">${excerpt.split('\n')[0].slice(0, 80) || cat}</h3>
-        <p class="news-card__excerpt">${excerpt}</p>
+        <time class="news-card__date">${cleanDate}</time>
+        <h3 class="news-card__title">${cleanTitle}</h3>
+        <p class="news-card__excerpt">${cleanExcerpt}</p>
         <a href="${url}" target="_blank" rel="noopener" class="news-card__link" id="news-api-link-${i + 1}">Đọc thêm →</a>
       </div>`;
     grid.appendChild(card);
@@ -289,15 +394,21 @@ function renderFallbackNews() {
     const card = document.createElement('article');
     card.className = 'news-card reveal';
     card.id = `news-${i + 1}`;
+    
+    const cleanTitle = sanitizeHTML(item.title);
+    const cleanExcerpt = sanitizeHTML(item.excerpt);
+    const cleanCat = sanitizeHTML(item.category);
+    const cleanDate = sanitizeHTML(item.date);
+
     card.innerHTML = `
       <div class="news-card__img-wrap">
-        <img src="${item.img}" alt="${item.category}" class="news-card__img" loading="lazy" />
-        <span class="news-card__cat">${item.category}</span>
+        <img src="${item.img}" alt="${cleanCat}" class="news-card__img" loading="lazy" />
+        <span class="news-card__cat">${cleanCat}</span>
       </div>
       <div class="news-card__body">
-        <time class="news-card__date">${item.date}</time>
-        <h3 class="news-card__title">${item.title}</h3>
-        <p class="news-card__excerpt">${item.excerpt}</p>
+        <time class="news-card__date">${cleanDate}</time>
+        <h3 class="news-card__title">${cleanTitle}</h3>
+        <p class="news-card__excerpt">${cleanExcerpt}</p>
         <a href="${item.url}" target="_blank" rel="noopener" class="news-card__link" id="news-link-${i + 1}">Đọc thêm →</a>
       </div>`;
     grid.appendChild(card);
@@ -312,13 +423,22 @@ function renderVideoCards(videos) {
   grid.innerHTML = '';
 
   videos.forEach((vid, i) => {
-    const title = vid.title || vid.description || 'Video từ LyLy Shop';
+    const rawTitle = vid.title || vid.description || 'Video từ LyLy Shop';
     const date = vid.created_time ? formatFBDate(vid.created_time) : '';
-    const url = vid.permalink_url || `https://www.facebook.com/${FB_CONFIG.pageId}/videos`;
+    
+    const rawUrl = vid.permalink_url || `https://www.facebook.com/${FB_CONFIG.pageId}/videos`;
+    const url = rawUrl.startsWith('http') ? rawUrl : '#';
+    
     const duration = vid.length ? formatDuration(vid.length) : '';
-    const thumb = (vid.thumbnails && vid.thumbnails.data && vid.thumbnails.data[0])
+    
+    const rawThumb = (vid.thumbnails && vid.thumbnails.data && vid.thumbnails.data[0])
       ? vid.thumbnails.data[0].uri
-      : `${['lifestyle', 'hero', 'products'][i % 3]}.png`;
+      : `assets/${['lifestyle', 'hero', 'products'][i % 3]}.png`;
+    const thumb = rawThumb.startsWith('http') || rawThumb.startsWith('assets/') ? rawThumb : `assets/lifestyle.png`;
+
+    const cleanTitle = sanitizeHTML(rawTitle.slice(0, 80));
+    const cleanDate = sanitizeHTML(date);
+    const cleanDuration = sanitizeHTML(duration);
 
     const card = document.createElement('div');
     card.className = 'video-card reveal';
@@ -326,15 +446,15 @@ function renderVideoCards(videos) {
     card.innerHTML = `
       <a href="${url}" target="_blank" rel="noopener" class="video-card__link" id="video-api-link-${i + 1}">
         <div class="video-card__thumb">
-          <img src="${thumb}" alt="${title}" class="video-card__img" loading="lazy" onerror="this.src='lifestyle.png'" />
+          <img src="${thumb}" alt="${cleanTitle}" class="video-card__img" loading="lazy" onerror="this.src='assets/lifestyle.png'" />
           <div class="video-card__play">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
-          ${duration ? `<div class="video-card__duration">${duration}</div>` : ''}
+          ${cleanDuration ? `<div class="video-card__duration">${cleanDuration}</div>` : ''}
         </div>
         <div class="video-card__info">
-          <h3 class="video-card__title">${title.slice(0, 80)}</h3>
-          <span class="video-card__date">${date}</span>
+          <h3 class="video-card__title">${cleanTitle}</h3>
+          <span class="video-card__date">${cleanDate}</span>
         </div>
       </a>`;
     grid.appendChild(card);
@@ -350,18 +470,23 @@ function renderFallbackVideos() {
     const card = document.createElement('div');
     card.className = 'video-card reveal';
     card.id = `video-${i + 1}`;
+    
+    const cleanTitle = sanitizeHTML(v.title);
+    const cleanDate = sanitizeHTML(v.date);
+    const cleanDuration = sanitizeHTML(v.duration);
+
     card.innerHTML = `
       <a href="${v.url}" target="_blank" rel="noopener" class="video-card__link" id="video-link-${i + 1}">
         <div class="video-card__thumb">
-          <img src="${v.thumbnail}" alt="${v.title}" class="video-card__img" loading="lazy" />
+          <img src="${v.thumbnail}" alt="${cleanTitle}" class="video-card__img" loading="lazy" />
           <div class="video-card__play">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
-          <div class="video-card__duration">${v.duration}</div>
+          <div class="video-card__duration">${cleanDuration}</div>
         </div>
         <div class="video-card__info">
-          <h3 class="video-card__title">${v.title}</h3>
-          <span class="video-card__date">${v.date}</span>
+          <h3 class="video-card__title">${cleanTitle}</h3>
+          <span class="video-card__date">${cleanDate}</span>
         </div>
       </a>`;
     grid.appendChild(card);
@@ -426,9 +551,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initChatWidgets();
   initForm();
+  initSizeGuideModal();
   initHeroAnimation();
   initSmoothScroll();
   loadFacebookContent();
+
+  // Dynamic footer year
+  const footerYear = document.getElementById('footer-year');
+  if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+  }
 
   // Add active nav link highlighting
   const sections = document.querySelectorAll('section[id]');
